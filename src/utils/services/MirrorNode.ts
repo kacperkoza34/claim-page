@@ -1,15 +1,14 @@
-import { TokenId } from '@hashgraph/sdk'
-import { SMART_CONTRACT_ID_HEXADECIMAL } from '@src/utils/constants/appInfo'
-import { DEFAULT_POST_REQUEST_CONFIG } from '@src/utils/constants/defaultPostRequestConfig'
-import { adjustNumberWithDecimals } from '@src/utils/helpers/adjustNumberWithDecimals'
-import { convertContractAddress } from '@src/utils/helpers/convertContractAddress'
-import { NFTData } from '@src/utils/types/NFTDataInterface'
-import { TokenDataInterface } from '@src/utils/types/TokenDataInterface'
-import axios, { AxiosError } from 'axios'
-import { ethers } from 'ethers'
+import { TokenId } from "@hashgraph/sdk";
+import { SMART_CONTRACT_ID_HEXADECIMAL } from "@src/utils/constants/appInfo";
+import { DEFAULT_POST_REQUEST_CONFIG } from "@src/utils/constants/defaultPostRequestConfig";
+import { adjustNumberWithDecimals } from "@src/utils/helpers/adjustNumberWithDecimals";
+import { convertContractAddress } from "@src/utils/helpers/convertContractAddress";
+import { NFTData } from "@src/utils/types/NFTDataInterface";
+import { TokenDataInterface } from "@src/utils/types/TokenDataInterface";
+import axios, { AxiosError } from "axios";
+import { ethers } from "ethers";
 
-const HEDERA_NETWORK = import.meta.env.VITE_HEDERA_NETWORK as string
-const HEDERA_MIRROR_NODE_API_VERSION = import.meta.env.VITE_HEDERA_MIRROR_NODE_API_VERSION as string
+const HEDERA_NETWORK = import.meta.env.VITE_HEDERA_NETWORK as string;
 
 const consoleWarnAxiosError = (e: unknown) => {
   if (e instanceof AxiosError) {
@@ -26,7 +25,7 @@ const consoleWarnAxiosError = (e: unknown) => {
 export default class MirrorNode {
   static url = `https://${
     HEDERA_NETWORK === "mainnet" ? "mainnet-public" : HEDERA_NETWORK
-  }.mirrornode.hedera.com/api/${HEDERA_MIRROR_NODE_API_VERSION}`;
+  }.mirrornode.hedera.com/api/v1`;
   static readonly instance = axios.create({
     baseURL: MirrorNode.url,
   });
@@ -53,7 +52,6 @@ export default class MirrorNode {
 
       return null;
     }
-    
   }
 
   static async getTokenData(
@@ -77,8 +75,15 @@ export default class MirrorNode {
     return response.data;
   }
 
-  static async getBalanceOfToken(tokenId: string, walletId: string): Promise<number | undefined> {
-    const { data: { tokens } } = await this.instance.get(`/accounts/${walletId}/tokens?token.id=${tokenId}`)
+  static async getBalanceOfToken(
+    tokenId: string,
+    walletId: string
+  ): Promise<number | undefined> {
+    const {
+      data: { tokens },
+    } = await this.instance.get(
+      `/accounts/${walletId}/tokens?token.id=${tokenId}`
+    );
 
     return tokens[0]?.balance;
   }
@@ -112,7 +117,7 @@ export default class MirrorNode {
 
     return responses;
   }
-  
+
   static async checkTokenAssociationStatus(tokenId: string, accountId: string) {
     tokenId = tokenId.startsWith("0x")
       ? TokenId.fromSolidityAddress(tokenId).toString()

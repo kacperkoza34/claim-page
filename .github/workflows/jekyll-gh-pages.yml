@@ -55,7 +55,6 @@ jobs:
         run: npm run build
         env:
           VITE_HEDERA_NETWORK: ${{ vars.VITE_HEDERA_NETWORK || inputs.VITE_HEDERA_NETWORK }}
-          VITE_HEDERA_MIRROR_NODE_API_VERSION: ${{ vars.VITE_HEDERA_MIRROR_NODE_API_VERSION || inputs.VITE_HEDERA_MIRROR_NODE_API_VERSION }}
           VITE_HEDERA_SMART_CONTRACT_ID: ${{ vars.VITE_HEDERA_SMART_CONTRACT_ID || inputs.VITE_HEDERA_SMART_CONTRACT_ID }}
       - name: Setup Pages
         uses: actions/configure-pages@v3
