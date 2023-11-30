@@ -48,10 +48,10 @@ jobs:
         uses: actions/setup-node@v3        
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install PNPM
-        run: npm i -g pnpm
-      - name: Install dependencies
-        run: pnpm install && pnpm install --frozen-lockfile
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
       - name: Build
         run: pnpm run build
         env:
