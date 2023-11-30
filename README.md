@@ -1,27 +1,67 @@
-# React + TypeScript + Vite
+# Hedera Claiming page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Getting Started
 
-Currently, two official plugins are available:
+1. Install project dependencies using npm:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+   ```bash
+   npm install
+   ```
 
-## Expanding the ESLint configuration
+2. Create a `.env` file in the root directory of the project with the following environment variables:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   ```env
+   VITE_HEDERA_NETWORK=testnet
+   VITE_HEDERA_SMART_CONTRACT_ID=0.0.12345
 
-- Configure the top-level `parserOptions` property like this:
+   VITE_WALLET_CONFIG_NAME=My app
+   VITE_WALLET_CONFIG_DESCRIPTION=My app description
+   VITE_WALLET_CONFIG_ICON_URL=https://myappicon.example/
+   VITE_WALLET_CONFIG_APP_URL=https://walletconfginurl.example/
+   ```
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Available Scripts
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+Start project in dev mode
+   ```bash
+   npm run dev
+   ```
+
+Build project
+   ```bash
+   npm run build
+   ```
+
+Serve static files after build
+   ```bash
+   npm run preview
+   ```
+
+Run linter
+   ```bash
+   npm run lint
+   ```
+
+## Deployment with github pages
+
+1. Fork repo 
+2. On your forked repo go to `Settings` > `Pages`
+3. Select Github actions
+
+![Alt text](assets/image.png)
+
+4. Go to `Actions` and select `Deploy static content to pages`
+
+![Alt text](assets/image-1.png)
+
+5. Run workflow with yor details
+
+![Alt text](assets/image-2.png)
+
+
+Alternatively you can set you environment variables in repo setting. 
+
+![Alt text](assets/image-3.png)
+
+Variables set in that way take priority over values provided in `Run workflow` form.

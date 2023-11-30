@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import useContractState from '@src/utils/hooks/useContractState'
+import useContractState from '@src/utils/hooks/contract/useContractState'
 
 export const ImageColumn: React.FC = () => {
   const { previewImage } = useContractState()

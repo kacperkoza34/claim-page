@@ -1,13 +1,13 @@
-import { ClaimingButtons } from "@src/components/ClaimingPage/ClaimingButtons";
-import { ImageColumn } from "@src/components/ClaimingPage/ImageColumn";
-import { MetadataColumn } from "@src/components/ClaimingPage/MetadataColumn";
+import { ContractClaimingButton } from "@src/components/claiming-page/buttons/ContractClaimingButton";
+import { ImageColumn } from "@src/components/claiming-page/ImageColumn";
+import { ContractInformationColumn } from "@src/components/claiming-page/ContractInformationColumn";
 import { WalletConnectionModal } from "@src/components/modals/WalletConnectionModal";
 import { Button } from "@src/components/shared/Button";
 import { SMART_CONTRACT_ID_DECIMAL } from "@src/utils/constants/appInfo";
 import { ClaimingPageContext } from "@src/utils/context/ClaimingPageContext";
-import { useClaiming } from "@src/utils/hooks/useClaiming";
-import useContractState from "@src/utils/hooks/useContractState";
-import useHederaWallets from "@src/utils/hooks/useHederaWallets";
+import { useClaiming } from "@src/utils/hooks/claiming/useClaiming";
+import useContractState from "@src/utils/hooks/contract/useContractState";
+import useHederaWallets from "@src/utils/hooks/wallets/useHederaWallets";
 import { useModal } from "@src/utils/hooks/useModal";
 import React from "react";
 
@@ -79,7 +79,7 @@ export const ClaimingPage: React.FC = () => {
                     </Button>
                   )}
 
-                  <ClaimingButtons />
+                  <ContractClaimingButton />
                 </>
               )}
 
@@ -94,7 +94,8 @@ export const ClaimingPage: React.FC = () => {
               )}
             </div>
           </div>
-          <MetadataColumn />
+
+          <ContractInformationColumn />
         </div>
       </div>
     </ClaimingPageContext.Provider>

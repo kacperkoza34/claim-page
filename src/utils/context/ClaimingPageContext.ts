@@ -1,5 +1,5 @@
 import React from "react";
-import { useClaiming } from "@src/utils/hooks/useClaiming";
+import { useClaiming } from "@src/utils/hooks/claiming/useClaiming";
 
 export const ClaimingPageContext = React.createContext<ReturnType<typeof useClaiming>>({
   approveTokenAllowance: () => Promise.resolve(undefined),

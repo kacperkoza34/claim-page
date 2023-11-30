@@ -1,4 +1,4 @@
-import { ClaimingButton } from "@src/components/ClaimingPage/ClaimingButton";
+import { ClaimingButton } from "@src/components/claiming-page/buttons/ClaimingButton";
 import { Button } from "@src/components/shared/Button";
 import { Checkbox } from "@src/components/shared/Checkbox";
 import { Modal } from "@src/components/shared/Modal";
@@ -7,7 +7,7 @@ import uniqueId from "lodash/uniqueId";
 import map from "lodash/map";
 import React from "react";
 import { useCallback, useEffect, useState } from "react";
-import { RequiredAllowance } from "@src/utils/hooks/useClaiming";
+import { RequiredAllowance } from "@src/utils/hooks/claiming/useClaiming";
 
 export const MultiPriceClaimModal: React.FC<{
   prices: RequiredAllowance[];

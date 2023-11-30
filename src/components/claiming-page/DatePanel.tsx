@@ -1,7 +1,7 @@
 import { TooltipIcon } from '@src/assets/icons/TooltipIcon'
 import { Tooltip } from '@src/components/shared/Tooltip'
 import { dateTooltipText } from '@src/utils/constants/tooltipText'
-import { useClaimingPageContext } from '@src/utils/hooks/useClaimingPageContext'
+import { useClaimingPageContext } from '@src/utils/hooks/claiming/useClaimingPageContext'
 
 export const DatePanel: React.FC = () => {
   const {

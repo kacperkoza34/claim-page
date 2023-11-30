@@ -6,4 +6,4 @@ export const dateTooltipText =
 export const otherGuardsTooltipText =
   "Guards are additional security measures or conditions set for token distribution, such as wallet verification or specific user eligibility.";
 export const NFTCollectionMetadataTooltipText =
-  "This metadata includes the immutable properties of the NFT stored on the blockchain, such as token ID, symbol, name, and the maximum supply available for minting.";
+  "This metadata includes the properties of the NFT stored on the blockchain, such as token ID, symbol, name, and the maximum supply available for minting.";

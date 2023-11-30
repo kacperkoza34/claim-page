@@ -1,12 +1,12 @@
 import { type ContractId } from "@hashgraph/sdk";
-import { HederaDistributionContract } from "@src/services/HDC";
-import { HederaTokenService } from "@src/services/HTS";
-import MirrorNode from "@src/services/MirrorNode";
+import { HederaDistributionContract } from "@src/utils/services/HDC";
+import { HederaTokenService } from "@src/utils/services/HTS";
+import MirrorNode from "@src/utils/services/MirrorNode";
 import { TokenDataInterface } from "@src/utils//types/TokenDataInterface";
 import { fromEVMAddressToHederaAccountId } from "@src/utils/helpers/fromEVMAddressToHederaId";
-import useClaimCounter from "@src/utils/hooks/useClaimCounter";
-import useContractState from "@src/utils/hooks/useContractState";
-import useHederaWallets from "@src/utils/hooks/useHederaWallets";
+import useClaimCounter from "@src/utils/hooks/claiming/useClaimCounter";
+import useContractState from "@src/utils/hooks/contract/useContractState";
+import useHederaWallets from "@src/utils/hooks/wallets/useHederaWallets";
 import findIndex from "lodash/findIndex";
 import map from "lodash/map";
 import { useCallback, useEffect, useState } from "react";

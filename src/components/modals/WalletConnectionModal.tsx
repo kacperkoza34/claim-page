@@ -1,7 +1,7 @@
 import { Button } from "@src/components/shared/Button";
 import { SUPPORTED_WALLETS } from "@src/utils/constants/supportedWallets";
 import { generateButtonLabel } from "@src/utils/helpers/generateButtonLabel";
-import useHederaWallets from "@src/utils/hooks/useHederaWallets";
+import useHederaWallets from "@src/utils/hooks/wallets/useHederaWallets";
 import { useCallback } from "react";
 import { Modal } from "@src/components/shared/Modal";
 import { useModal } from "@src/utils/hooks/useModal";

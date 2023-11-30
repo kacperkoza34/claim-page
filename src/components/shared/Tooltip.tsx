@@ -1,9 +1,9 @@
 import clsx from 'clsx'
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 
 interface TooltipProps {
   children: React.ReactNode
-  tooltip?: string,
+  tooltip?: string | React.ReactElement,
   position?: 'top' | 'bottom'
 }
 

@@ -1,5 +1,5 @@
-import { TokenGatingRequiredToken } from "@src/services/HDC";
-import { OffChainMetadata } from "@src/services/Metadata";
+import { TokenGatingRequiredToken } from "@src/utils/services/HDC";
+import { OffChainMetadata } from "@src/utils/services/Metadata";
 import { ContractState } from "@src/utils/context/ContractStateContext";
 import { DistributionDates } from "@src/utils/entity/NFTInfo";
 import { NFTData } from "@src/utils/types/NFTDataInterface";

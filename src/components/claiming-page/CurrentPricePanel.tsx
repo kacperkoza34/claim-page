@@ -1,5 +1,5 @@
 import { TooltipIcon } from '@src/assets/icons/TooltipIcon'
-import useContractState from '@src/utils/hooks/useContractState'
+import useContractState from '@src/utils/hooks/contract/useContractState'
 import { Tooltip } from '@src/components/shared/Tooltip'
 import { currentPriceTooltipText } from '@src/utils/constants/tooltipText'
 

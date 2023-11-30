@@ -17,9 +17,9 @@ import {
   setPreviewImage,
   setDistributionDates
 } from "@src/utils/reducers/contractActions";
-import { Metadata, OffChainMetadata } from "@src/services/Metadata";
+import { Metadata, OffChainMetadata } from "@src/utils/services/Metadata";
 import { DistributionDates } from "@src/utils/entity/NFTInfo";
-import { HederaDistributionContract, TokenGatingRequiredToken } from "@src/services/HDC";
+import { HederaDistributionContract, TokenGatingRequiredToken } from "@src/utils/services/HDC";
 
 export interface ContractState {
   remainingDistributionAvailable: number;

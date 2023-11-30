@@ -1,11 +1,11 @@
 import { Button } from "@src/components/shared/Button";
 import { Tooltip } from "@src/components/shared/Tooltip";
-import MirrorNode from "@src/services/MirrorNode";
+import MirrorNode from "@src/utils/services/MirrorNode";
 import { hederaIdToSolidityAddress } from "@src/utils/helpers/hederaIdToSolidityAddress";
-import { RequiredAllowance } from "@src/utils/hooks/useClaiming";
-import { useClaimingPageContext } from "@src/utils/hooks/useClaimingPageContext";
-import useContractState from "@src/utils/hooks/useContractState";
-import useHederaWallets from "@src/utils/hooks/useHederaWallets";
+import { RequiredAllowance } from "@src/utils/hooks/claiming/useClaiming";
+import { useClaimingPageContext } from "@src/utils/hooks/claiming/useClaimingPageContext";
+import useContractState from "@src/utils/hooks/contract/useContractState";
+import useHederaWallets from "@src/utils/hooks/wallets/useHederaWallets";
 import { useCallback, useEffect, useState } from "react";
 
 export const ClaimingButton = ({
@@ -106,7 +106,7 @@ export const ClaimingButton = ({
     if (tooltipMessage) {
       return (
         <Tooltip position="top" tooltip={tooltipMessage}>
-          <span className="border-1 rounded-full bg-error w-6 h-6 flex text-center justify-center items-center  text-white">
+          <span className="border-1 rounded-full bg-error w-6 h-6 flex text-center justify-center items-center text-white">
             !
           </span>
         </Tooltip>
@@ -117,14 +117,20 @@ export const ClaimingButton = ({
   if (symbol === "HBAR" && price) {
     return (
       <Button
-        className={className}
+        className={className + " relative"}
         type="submit"
-        disabled={!isAccountAssociatedToToken || claimingStatus === 'countToStart' || claimingStatus === 'expired'}
+        disabled={
+          !isAccountAssociatedToToken ||
+          claimingStatus === "countToStart" ||
+          claimingStatus === "expired"
+        }
         onClick={async () => await handleClaimToken(price.toString())}
       >
         Claim
-
-        {renderTooltip()}
+  
+        <span className="absolute -top-2 -right-2 text-white">
+          {renderTooltip()}
+        </span>
       </Button>
     );
   }

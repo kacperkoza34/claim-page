@@ -1,5 +1,5 @@
 import { ContractStateProvider } from "@src/utils/context/ContractStateContext";
-import { ClaimingPage } from "./components/ClaimingPage/ClaimingPage";
+import { ClaimingPage } from "@src/views/ClaimingPage";
 import HederaWalletsProvider from "@src/utils/context/HederaWalletsContext";
 import { ModalProvider } from "@src/utils/context/ModalContext";
 import { ToastContainer } from "react-toastify";

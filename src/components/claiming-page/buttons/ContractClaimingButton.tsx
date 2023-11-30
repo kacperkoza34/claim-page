@@ -1,13 +1,13 @@
-import { ClaimingButton } from "@src/components/ClaimingPage/ClaimingButton";
+import { ClaimingButton } from "@src/components/claiming-page/buttons/ClaimingButton";
 import { MultiPriceClaimModal } from "@src/components/modals/MultiPriceClaimModal";
 import { Button } from "@src/components/shared/Button";
-import { useClaimingPageContext } from "@src/utils/hooks/useClaimingPageContext";
-import useContractState from "@src/utils/hooks/useContractState";
-import useHederaWallets from "@src/utils/hooks/useHederaWallets";
+import { useClaimingPageContext } from "@src/utils/hooks/claiming/useClaimingPageContext";
+import useContractState from "@src/utils/hooks/contract/useContractState";
+import useHederaWallets from "@src/utils/hooks/wallets/useHederaWallets";
 import { useModal } from "@src/utils/hooks/useModal";
 import { useMemo } from "react";
 
-export const ClaimingButtons = () => {
+export const ContractClaimingButton = () => {
   const { claimToken, isAccountAssociatedToToken, requiredAllowances } =
     useClaimingPageContext();
   const { toggleModal: toogleMultiPriceClaimModal } = useModal(
