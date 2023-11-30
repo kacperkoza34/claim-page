@@ -29,20 +29,12 @@ export const TokenGating = ({
             {map(
               tokenGatingRequiredFungibleTokenList,
               ({ tokenData: { name, token_id, symbol }, amount }) => (
-                <>
-                  <RequiredToken
-                    tokenName={name}
-                    tokenId={token_id}
-                    tokenSymbol={symbol}
-                    amount={amount}
-                  />
-                  <RequiredToken
-                    tokenName={name}
-                    tokenId={token_id}
-                    tokenSymbol={symbol}
-                    amount={amount}
-                  />
-                </>
+                <RequiredToken
+                  tokenName={name}
+                  tokenId={token_id}
+                  tokenSymbol={symbol}
+                  amount={amount}
+                />
               )
             )}
           </div>
@@ -57,38 +49,12 @@ export const TokenGating = ({
             {map(
               tokenGatingRequiredNonFungibleTokenList,
               ({ tokenData: { name, token_id, symbol }, amount }) => (
-                <>
-                  <RequiredToken
-                    tokenName={name}
-                    tokenId={token_id}
-                    tokenSymbol={symbol}
-                    amount={amount}
-                  />
-                  <RequiredToken
-                    tokenName={name}
-                    tokenId={token_id}
-                    tokenSymbol={symbol}
-                    amount={amount}
-                  />
-                  <RequiredToken
-                    tokenName={name}
-                    tokenId={token_id}
-                    tokenSymbol={symbol}
-                    amount={amount}
-                  />
-                  <RequiredToken
-                    tokenName={name}
-                    tokenId={token_id}
-                    tokenSymbol={symbol}
-                    amount={amount}
-                  />
-                  <RequiredToken
-                    tokenName={name}
-                    tokenId={token_id}
-                    tokenSymbol={symbol}
-                    amount={amount}
-                  />
-                </>
+                <RequiredToken
+                  tokenName={name}
+                  tokenId={token_id}
+                  tokenSymbol={symbol}
+                  amount={amount}
+                />
               )
             )}
           </div>

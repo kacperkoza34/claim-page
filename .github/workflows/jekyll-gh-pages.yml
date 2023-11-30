@@ -50,9 +50,9 @@ jobs:
           node-version: 18
           cache: 'npm'
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
       - name: Build
-        run: npm run build
+        run: pnpm run build
         env:
           VITE_HEDERA_NETWORK: ${{ vars.VITE_HEDERA_NETWORK || inputs.VITE_HEDERA_NETWORK }}
           VITE_HEDERA_SMART_CONTRACT_ID: ${{ vars.VITE_HEDERA_SMART_CONTRACT_ID || inputs.VITE_HEDERA_SMART_CONTRACT_ID }}

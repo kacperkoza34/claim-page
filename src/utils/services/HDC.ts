@@ -173,7 +173,7 @@ export class HederaDistributionContract extends HederaContractService {
 
           return {
             address,
-            amount: amount.toString(),
+            amount: Number(amount),
           };
         })
       );

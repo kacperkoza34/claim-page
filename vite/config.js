@@ -1,12 +1,15 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { nodePolyfills } from "vite-plugin-node-polyfills";
-import mkcert from "vite-plugin-mkcert";
 import commonjs from "vite-plugin-commonjs";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 
-export default defineConfig({
-  server: { https: true },
-  plugins: [react(), nodePolyfills(), mkcert()],
+export const CERT_FILE_PATH = "certs/cert.pem";
+export const KEY_FILE_PATH = "certs/key.pem";
+
+export const viteConfig = {
+  server: {
+    https: true,
+  },
+  plugins: [react(), nodePolyfills()],
   resolve: {
     alias: {
       buffer: "buffer",
@@ -31,4 +34,4 @@ export default defineConfig({
       ],
     },
   },
-});
+};

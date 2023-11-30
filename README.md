@@ -25,43 +25,41 @@
 
 Start project in dev mode
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 Build project
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 Serve static files after build
    ```bash
-   npm run preview
+   pnpm run preview
    ```
 
 Run linter
    ```bash
-   npm run lint
+   pnpm run lint
    ```
 
 ## Deployment with github pages
 
 1. Fork repo 
-2. On your forked repo go to `Settings` > `Pages`
-3. Select Github actions
+2. On your forked repo go to `Settings` > `Pages` and enable github pages with `GitHub Actions`
+
 
 ![Alt text](assets/image.png)
 
-4. Go to `Actions` and select `Deploy static content to pages`
+3. Go to `Actions` and select `Deploy static content to pages`
 
 ![Alt text](assets/image-1.png)
 
-5. Run workflow with yor details
+4. Run workflow with yor details
 
 ![Alt text](assets/image-2.png)
 
 
-Alternatively you can set you environment variables in repo setting. 
+Alternatively you can set you environment variables in repo setting. Variables set in that way take priority over values provided in `Run workflow` form.
 
 ![Alt text](assets/image-3.png)
-
-Variables set in that way take priority over values provided in `Run workflow` form.
