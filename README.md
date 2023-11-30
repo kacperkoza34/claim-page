@@ -5,7 +5,7 @@
 1. Install project dependencies using npm:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 2. Create a `.env` file in the root directory of the project with the following environment variables:
@@ -46,12 +46,23 @@ Run linter
 ## Deployment with github pages
 
 1. Fork repo 
-2. On your forked repo go to `Settings` > `Pages` and enable github pages with `GitHub Actions`
+2. On your forked repo go to `Settings` 
 
+![Alt text](assets/image-4.png)
 
-![Alt text](assets/image.png)
+3. Go to `Pages`
 
-3. Go to `Actions` and select `Deploy static content to pages`
+![Alt text](assets/image-5.png)
+
+4. Enable `GitHub Actions`
+
+![Alt text](assets/image-6.png)
+
+5. Go to `Actions`
+
+![Alt text](assets/image-7.png)
+
+6. Select `Deploy static content to pages`
 
 ![Alt text](assets/image-1.png)
 
